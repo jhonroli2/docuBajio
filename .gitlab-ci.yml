@@ -1,18 +1,26 @@
 image: python:3.12
 
+before_script:
+  - pip install --upgrade pip  # Asegúrate de que pip esté actualizado
+
+stages:
+  - deploy
+
 pages:
   stage: deploy
   script:
     - pip install mkdocs
     - pip install mkdocs-material
     - mkdocs build -d public
+    - ls -alh public  # Verifica el contenido de la carpeta public
   artifacts:
     paths:
       - public
-only:
-  refs:
-    - main
-  changes:
-    - docs/*
-    - mkdocs.yml
-    - .gitlab-ci.yml
+  rules:
+    # Ejecutar solo en la rama main o master
+    - if: '$CI_COMMIT_BRANCH == "main"' 
+    # Ejecutar solo si hay cambios en los archivos especificados
+    - changes:
+        - docs/*
+        - mkdocs.yml
+        - .gitlab-ci.yml
