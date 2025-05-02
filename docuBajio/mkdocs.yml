@@ -7,8 +7,6 @@ nav:
 
 theme:
   name: readthedocs
-  features:
-    - content.code.copy
 
 plugins:
   - pdf-export:
