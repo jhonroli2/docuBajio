@@ -6,7 +6,9 @@ nav:
   - Web: web.md
 
 theme:
-  name: readthedocs
+  name: material
+  features:
+    - content.code.copy
 
 plugins:
   #- pdf-export:
