@@ -16,7 +16,3 @@ only:
     - docs/*
     - mkdocs.yml
     - .gitlab-ci.yml
-
-
-    
-
