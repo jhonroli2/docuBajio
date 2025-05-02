@@ -1,0 +1,22 @@
+image: python:3.12
+
+pages:
+  stage: deploy
+  script:
+    - pip install mkdocs
+    - pip install mkdocs-material
+    - mkdocs build -d public
+  artifacts:
+    paths:
+      - public
+only:
+  refs:
+    - main
+  changes:
+    - docs/*
+    - mkdocs.yml
+    - .gitlab-ci.yml
+
+
+    
+
