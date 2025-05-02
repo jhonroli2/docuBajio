@@ -9,10 +9,10 @@ theme:
   name: readthedocs
 
 plugins:
-  - pdf-export:
-      verbose: true
-      media_type: print
+  #- pdf-export:
+      #verbose: true
+      #media_type: print
       #Ejecutar desde terminal export ENABLE_PDF_EXPORT=1 para encender
       #Ejecutar desde terminal unset ENABLE_PDF_EXPORT para apagar
-      enabled_if_env: ENABLE_PDF_EXPORT
-      combined: true
+      #enabled_if_env: ENABLE_PDF_EXPORT
+      #combined: true
